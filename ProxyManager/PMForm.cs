@@ -37,7 +37,8 @@ namespace ProxyManager
             set
             {
                 _currentProxy = new Proxy(value);
-                lblCurrentProxyValue.Text = CurrentProxy;
+                txtProxy.Text = _currentProxy._proxy;
+                txtPort.Text = _currentProxy._port;
             }
         }
         public string CurrentProxyExceptions
@@ -66,30 +67,44 @@ namespace ProxyManager
                 CurrentProxy = registry.GetValue(ProxyServerRegKey) + "";
                 CurrentProxyEnabled = (int.Parse(registry.GetValue(ProxyEnableRegKey) + "") == 1 ? true : false);
                 CurrentProxyExceptions = registry.GetValue(ProxyOverrideRegKey) + "";
+
+                ProxyList.Add(_currentProxy);
+
                 LoadXML();
             }
             catch (Exception ex) { Log(ex); }
         }
         private void LoadXML()
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("ProxyList.xml");
-
-            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            try
             {
-                if (node.HasChildNodes)
+                XmlDocument doc = new XmlDocument();
+                doc.Load("ProxyList.xml");
+
+                foreach (XmlNode node in doc.DocumentElement.ChildNodes)
                 {
-                    ProxyList.Add(new Proxy()
+                    if (node.HasChildNodes)
                     {
-                        _nome = node["name"].InnerText,
-                        _proxy = node["address"].InnerText,
-                        _port = node["port"].InnerText,
-                        _exceptions = node["exceptions"].InnerText
-                    });
-                    ddlProxy.Items.Add(node["name"].InnerText);
+                        ProxyList.Add(new Proxy()
+                        {
+                            _nome = node["name"].InnerText,
+                            _proxy = node["address"].InnerText,
+                            _port = node["port"].InnerText,
+                            _exceptions = node["exceptions"].InnerText
+                        });
+                    }
                 }
+
+                ProxyList.ForEach(x =>
+                {
+                    ddlProxy.Items.Add(x._nome);
+                });
+                ddlProxy.SelectedIndex = 0;
+
+                ddlProxy.Visible =
+                btnSelectProxy.Visible = true;
             }
-            ddlProxy.SelectedIndex = 0;
+            catch (Exception) { }
         }
         private void chkProxyEnabled_CheckedChanged(object sender, EventArgs e)
         {
@@ -186,6 +201,7 @@ namespace ProxyManager
             }
             public Proxy(string proxyReg)
             {
+                _nome = "Current";
                 if (!string.IsNullOrEmpty(proxyReg))
                 {
                     string[] proxy = proxyReg.Split(':');
