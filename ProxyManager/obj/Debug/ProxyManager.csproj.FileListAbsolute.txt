@@ -1,0 +1,10 @@
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\bin\Debug\ProxyManager.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\bin\Debug\ProxyManager.exe
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\bin\Debug\ProxyManager.pdb
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\obj\Debug\ProxyManager.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\obj\Debug\ProxyManager.PMForm.resources
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\obj\Debug\ProxyManager.Properties.Resources.resources
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\obj\Debug\ProxyManager.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\obj\Debug\ProxyManager.exe
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\obj\Debug\ProxyManager.pdb
+C:\Users\Administrator\Documents\Visual Studio 2017\Projects\ProxyManager\ProxyManager\bin\Debug\ProxyList.xml
