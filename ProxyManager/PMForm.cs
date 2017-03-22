@@ -97,7 +97,7 @@ namespace ProxyManager
                 ddlProxy.Visible =
                 btnSelectProxy.Visible = true;
             }
-            catch (Exception) { }
+            catch (Exception) { Log(new Exception("Errore nel caricamento del file ProxyList.xml")); }
         }
         private void chkProxyEnabled_CheckedChanged(object sender, EventArgs e)
         {
@@ -172,8 +172,7 @@ namespace ProxyManager
             MessageBox.Show(textMess, "ProxyManager Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
-
-
+        
         private void btnEnableProxy_Click(object sender, EventArgs e)
         {
             SetProxyEnabled((sender as Button).Text == "ENABLE PROXY");
