@@ -28,12 +28,6 @@ namespace ProxyManager
         private Proxy _currentProxy;
         public string CurrentProxy
         {
-            get
-            {
-                if (_currentProxy == null)
-                    _currentProxy = new Proxy();
-                return _currentProxy.ToString();
-            }
             set
             {
                 _currentProxy = new Proxy(value);
@@ -112,7 +106,7 @@ namespace ProxyManager
         }
         private void btnSetProxy_Click(object sender, EventArgs e)
         {
-            SetProxy(txtProxy.Text, txtPort.Text);
+            SetProxy(_currentProxy);
         }
         private void btnSelectProxy_Click(object sender, EventArgs e)
         {
@@ -123,17 +117,14 @@ namespace ProxyManager
         }
 
         #region ------------------ Utils ------------------
-        private void SetProxy(string newProxy, string newPort)
+        private void SetProxy(Proxy proxy)
         {
             try
             {
-                string proxy = newProxy;
-                if (string.IsNullOrEmpty(proxy))
+                if (proxy == null)
                     return;
-                if (!string.IsNullOrEmpty(newPort))
-                    proxy += ":" + newPort.Trim();
-                registry.SetValue(ProxyServerRegKey, proxy);
-                CurrentProxy = registry.GetValue(ProxyServerRegKey) + "";
+                registry.SetValue(ProxyServerRegKey, proxy.RealProxy);
+                registry.SetValue(ProxyOverrideRegKey, proxy._exceptions);
 
                 RefreshSettings();
             }
@@ -182,14 +173,26 @@ namespace ProxyManager
         }
         #endregion
 
-        private void txtExceptions_TextChanged(object sender, EventArgs e)
-        {
-            CurrentProxyExceptions = txtExceptions.Text;
-        }
 
         private void btnEnableProxy_Click(object sender, EventArgs e)
         {
             SetProxyEnabled((sender as Button).Text == "ENABLE PROXY");
+        }
+
+        private void txtExceptions_TextChanged(object sender, EventArgs e)
+        {
+            CurrentProxyExceptions = txtExceptions.Text;
+        }
+        private void txtProxy_TextChanged(object sender, EventArgs e)
+        {
+            if (_currentProxy != null)
+                _currentProxy._proxy = txtProxy.Text;
+        }
+
+        private void txtPort_TextChanged(object sender, EventArgs e)
+        {
+            if (_currentProxy != null)
+                _currentProxy._port = txtPort.Text;
         }
 
         protected class Proxy
@@ -205,7 +208,7 @@ namespace ProxyManager
             }
             public Proxy(string proxyReg)
             {
-                _nome = "Current";
+                _nome = "Initial";
                 if (!string.IsNullOrEmpty(proxyReg))
                 {
                     string[] proxy = proxyReg.Split(':');
@@ -215,12 +218,10 @@ namespace ProxyManager
                         this._port = proxy[1];
                 }
             }
-            public override string ToString()
+
+            public string RealProxy
             {
-                string proxy = (_proxy + "").Trim();
-                if (!string.IsNullOrEmpty(_port))
-                    proxy += ":" + _port.Trim();
-                return proxy;
+                get { return _proxy + ":" + _port; }
             }
         }
     }
