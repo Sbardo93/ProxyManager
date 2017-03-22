@@ -52,8 +52,7 @@ namespace ProxyManager
         }
         public bool CurrentProxyEnabled
         {
-            get { return chkProxyEnabled.Checked; }
-            set { chkProxyEnabled.Checked = value; }
+            set { btnEnableProxy.Text = value ? "DISABLE PROXY" : "ENABLE PROXY"; }
         }
 
         List<Proxy> ProxyList = new List<Proxy>();
@@ -186,6 +185,11 @@ namespace ProxyManager
         private void txtExceptions_TextChanged(object sender, EventArgs e)
         {
             CurrentProxyExceptions = txtExceptions.Text;
+        }
+
+        private void btnEnableProxy_Click(object sender, EventArgs e)
+        {
+            SetProxyEnabled((sender as Button).Text == "ENABLE PROXY");
         }
 
         protected class Proxy
