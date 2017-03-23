@@ -131,7 +131,7 @@ namespace ProxyManager
                 registry.SetValue(ProxyOverrideRegKey, proxy._exceptions);
 
                 RefreshSettings();
-                MessageBox.Show("Proxy updated", "ProxyManager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Info("Proxy updated!");
             }
             catch (Exception ex) { Log(ex); }
         }
@@ -143,7 +143,7 @@ namespace ProxyManager
                 CurrentProxyEnabled = enabled;
 
                 RefreshSettings();
-                MessageBox.Show("Proxy " + (enabled ? "enabled" : "disabled"), "ProxyManager", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Info("Proxy " + (enabled ? "enabled" : "disabled") + "!");
             }
             catch (Exception ex) { Log(ex); }
         }
@@ -176,6 +176,10 @@ namespace ProxyManager
                 i++;
             }
             MessageBox.Show(textMess, "ProxyManager Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void Info(string mess)
+        {
+            MessageBox.Show(mess, "ProxyManager", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         #endregion
 
