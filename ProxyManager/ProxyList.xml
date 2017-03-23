@@ -4,6 +4,6 @@
     <name>Inps</name>
     <address>proxy01.avndrome.net</address>
     <port>8080</port>
-    <exceptions>*tfs2008app*;localhost;*.ser-test.inps;*.sviluppo.inps.it;*.collaudo.inps.it;*.intranet.inps.it;*ws7test.inps.it;*ws.svil.inps;*inps*;*.svil.inps*;*localhost*;*srvmev02.ser-test.inps*;http://gedoc.*;*scsvil03.avndrome.net*;*msws.svil.inps*;*webcol20*;*tfs2010app*;*hisremlegacy*;*192.168.12.20*;*avndrome*;&lt;local&gt;</exceptions>
+    <exceptions>*avndrome*;*inps*;*192.168.12.20*;&lt;local&gt;</exceptions>
   </proxy>
 </proxyList>
