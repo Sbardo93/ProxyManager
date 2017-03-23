@@ -47,7 +47,7 @@
             this.btnSetProxy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSetProxy.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetProxy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSetProxy.Location = new System.Drawing.Point(303, 186);
+            this.btnSetProxy.Location = new System.Drawing.Point(292, 186);
             this.btnSetProxy.Name = "btnSetProxy";
             this.btnSetProxy.Size = new System.Drawing.Size(83, 33);
             this.btnSetProxy.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.lblProxy.AutoSize = true;
             this.lblProxy.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProxy.ForeColor = System.Drawing.Color.Snow;
-            this.lblProxy.Location = new System.Drawing.Point(13, 9);
+            this.lblProxy.Location = new System.Drawing.Point(6, 9);
             this.lblProxy.Name = "lblProxy";
             this.lblProxy.Size = new System.Drawing.Size(39, 15);
             this.lblProxy.TabIndex = 1;
@@ -69,7 +69,7 @@
             // txtProxy
             // 
             this.txtProxy.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProxy.Location = new System.Drawing.Point(56, 6);
+            this.txtProxy.Location = new System.Drawing.Point(45, 6);
             this.txtProxy.Name = "txtProxy";
             this.txtProxy.Size = new System.Drawing.Size(330, 23);
             this.txtProxy.TabIndex = 2;
@@ -79,7 +79,7 @@
             // txtPort
             // 
             this.txtPort.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPort.Location = new System.Drawing.Point(56, 32);
+            this.txtPort.Location = new System.Drawing.Point(45, 32);
             this.txtPort.MaxLength = 4;
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(47, 23);
@@ -92,7 +92,7 @@
             this.lblPort.AutoSize = true;
             this.lblPort.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPort.ForeColor = System.Drawing.Color.Snow;
-            this.lblPort.Location = new System.Drawing.Point(20, 35);
+            this.lblPort.Location = new System.Drawing.Point(13, 35);
             this.lblPort.Name = "lblPort";
             this.lblPort.Size = new System.Drawing.Size(32, 15);
             this.lblPort.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.txtExceptions.BackColor = System.Drawing.SystemColors.HotTrack;
             this.txtExceptions.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExceptions.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtExceptions.Location = new System.Drawing.Point(16, 79);
+            this.txtExceptions.Location = new System.Drawing.Point(5, 79);
             this.txtExceptions.Multiline = true;
             this.txtExceptions.Name = "txtExceptions";
             this.txtExceptions.Size = new System.Drawing.Size(370, 102);
@@ -115,7 +115,7 @@
             this.lblExceptions.AutoSize = true;
             this.lblExceptions.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExceptions.ForeColor = System.Drawing.Color.Snow;
-            this.lblExceptions.Location = new System.Drawing.Point(16, 60);
+            this.lblExceptions.Location = new System.Drawing.Point(5, 60);
             this.lblExceptions.Name = "lblExceptions";
             this.lblExceptions.Size = new System.Drawing.Size(66, 15);
             this.lblExceptions.TabIndex = 9;
@@ -127,7 +127,7 @@
             this.btnSelectProxy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSelectProxy.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectProxy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSelectProxy.Location = new System.Drawing.Point(303, 36);
+            this.btnSelectProxy.Location = new System.Drawing.Point(292, 36);
             this.btnSelectProxy.Name = "btnSelectProxy";
             this.btnSelectProxy.Size = new System.Drawing.Size(83, 33);
             this.btnSelectProxy.TabIndex = 10;
@@ -140,7 +140,7 @@
             // 
             this.ddlProxy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlProxy.FormattingEnabled = true;
-            this.ddlProxy.Location = new System.Drawing.Point(197, 43);
+            this.ddlProxy.Location = new System.Drawing.Point(186, 43);
             this.ddlProxy.Name = "ddlProxy";
             this.ddlProxy.Size = new System.Drawing.Size(100, 21);
             this.ddlProxy.TabIndex = 11;
@@ -152,7 +152,7 @@
             this.btnEnableProxy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnEnableProxy.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnableProxy.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEnableProxy.Location = new System.Drawing.Point(70, 186);
+            this.btnEnableProxy.Location = new System.Drawing.Point(59, 186);
             this.btnEnableProxy.Name = "btnEnableProxy";
             this.btnEnableProxy.Size = new System.Drawing.Size(164, 33);
             this.btnEnableProxy.TabIndex = 12;
@@ -165,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(398, 221);
+            this.ClientSize = new System.Drawing.Size(380, 221);
             this.Controls.Add(this.btnEnableProxy);
             this.Controls.Add(this.ddlProxy);
             this.Controls.Add(this.btnSelectProxy);

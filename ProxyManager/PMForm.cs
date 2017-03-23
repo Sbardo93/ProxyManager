@@ -115,6 +115,10 @@ namespace ProxyManager
             txtPort.Text = proxy._port;
             txtExceptions.Text = proxy._exceptions;
         }
+        private void btnEnableProxy_Click(object sender, EventArgs e)
+        {
+            SetProxyEnabled((sender as Button).Text == "ENABLE PROXY");
+        }
 
         #region ------------------ Utils ------------------
         private void SetProxy(Proxy proxy)
@@ -127,6 +131,7 @@ namespace ProxyManager
                 registry.SetValue(ProxyOverrideRegKey, proxy._exceptions);
 
                 RefreshSettings();
+                MessageBox.Show("Proxy updated", "ProxyManager", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) { Log(ex); }
         }
@@ -138,6 +143,7 @@ namespace ProxyManager
                 CurrentProxyEnabled = enabled;
 
                 RefreshSettings();
+                MessageBox.Show("Proxy " + (enabled ? "enabled" : "disabled"), "ProxyManager", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex) { Log(ex); }
         }
@@ -172,11 +178,6 @@ namespace ProxyManager
             MessageBox.Show(textMess, "ProxyManager Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
-        
-        private void btnEnableProxy_Click(object sender, EventArgs e)
-        {
-            SetProxyEnabled((sender as Button).Text == "ENABLE PROXY");
-        }
 
         private void txtExceptions_TextChanged(object sender, EventArgs e)
         {

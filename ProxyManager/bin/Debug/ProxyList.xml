@@ -2,8 +2,8 @@
 <proxyList>
   <proxy>
     <name>Inps</name>
-    <address>proxy.avndrome.net</address>
+    <address>proxy01.avndrome.net</address>
     <port>8080</port>
-    <exceptions>*avndrome*;*inps*;&lt;local&gt;</exceptions>
+    <exceptions>*avndrome*;*inps*;*192.168.12.20*;&lt;local&gt;</exceptions>
   </proxy>
 </proxyList>
