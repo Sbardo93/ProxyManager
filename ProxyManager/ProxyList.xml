@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <proxyList>
   <proxy>
-    <name>Inps</name>
+    <name>Inps - Proxy01</name>
     <address>proxy01.avndrome.net</address>
     <port>8080</port>
     <exceptions>*avndrome*;*inps*;*192.168.12.20*;&lt;local&gt;</exceptions>
