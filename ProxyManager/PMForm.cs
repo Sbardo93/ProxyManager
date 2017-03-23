@@ -106,7 +106,13 @@ namespace ProxyManager
         }
         private void btnSetProxy_Click(object sender, EventArgs e)
         {
-            SetProxy(_currentProxy);
+            if (_currentProxy != null)
+            {
+                _currentProxy._proxy = txtProxy.Text;
+                _currentProxy._port = txtPort.Text;
+                CurrentProxyExceptions = txtExceptions.Text;
+                SetProxy(_currentProxy);
+            }
         }
         private void btnSelectProxy_Click(object sender, EventArgs e)
         {
@@ -118,6 +124,17 @@ namespace ProxyManager
         private void btnEnableProxy_Click(object sender, EventArgs e)
         {
             SetProxyEnabled((sender as Button).Text == "ENABLE PROXY");
+        }
+        private void txtProxy_TextChanged(object sender, EventArgs e)
+        {
+            if (_currentProxy != null)
+                _currentProxy._proxy = txtProxy.Text;
+        }
+
+        private void txtPort_TextChanged(object sender, EventArgs e)
+        {
+            if (_currentProxy != null)
+                _currentProxy._port = txtPort.Text;
         }
 
         #region ------------------ Utils ------------------
@@ -183,22 +200,6 @@ namespace ProxyManager
         }
         #endregion
 
-        private void txtExceptions_TextChanged(object sender, EventArgs e)
-        {
-            CurrentProxyExceptions = txtExceptions.Text;
-        }
-        private void txtProxy_TextChanged(object sender, EventArgs e)
-        {
-            if (_currentProxy != null)
-                _currentProxy._proxy = txtProxy.Text;
-        }
-
-        private void txtPort_TextChanged(object sender, EventArgs e)
-        {
-            if (_currentProxy != null)
-                _currentProxy._port = txtPort.Text;
-        }
-
         protected class Proxy
         {
             public string _nome { get; set; }
@@ -221,6 +222,15 @@ namespace ProxyManager
                     if (proxy.Length > 1)
                         this._port = proxy[1];
                 }
+            }
+            public Proxy(Proxy proxy)
+            {
+                if (proxy == null)
+                    return;
+                _nome = proxy._nome;
+                _proxy = proxy._proxy;
+                _port = proxy._port;
+                _exceptions = proxy._exceptions;
             }
 
             public string RealProxy

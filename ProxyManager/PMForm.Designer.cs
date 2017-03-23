@@ -74,7 +74,6 @@
             this.txtProxy.Size = new System.Drawing.Size(330, 23);
             this.txtProxy.TabIndex = 2;
             this.txtProxy.WordWrap = false;
-            this.txtProxy.TextChanged += new System.EventHandler(this.txtProxy_TextChanged);
             // 
             // txtPort
             // 
@@ -85,7 +84,6 @@
             this.txtPort.Size = new System.Drawing.Size(47, 23);
             this.txtPort.TabIndex = 4;
             this.txtPort.WordWrap = false;
-            this.txtPort.TextChanged += new System.EventHandler(this.txtPort_TextChanged);
             // 
             // lblPort
             // 
@@ -108,7 +106,6 @@
             this.txtExceptions.Name = "txtExceptions";
             this.txtExceptions.Size = new System.Drawing.Size(370, 102);
             this.txtExceptions.TabIndex = 8;
-            this.txtExceptions.TextChanged += new System.EventHandler(this.txtExceptions_TextChanged);
             // 
             // lblExceptions
             // 
